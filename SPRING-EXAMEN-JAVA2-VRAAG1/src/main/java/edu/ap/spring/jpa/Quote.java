@@ -10,4 +10,6 @@ public class Quote {
 	   @Id
 	   @GeneratedValue
 	   private Long id;
+	   
+	   
 }
