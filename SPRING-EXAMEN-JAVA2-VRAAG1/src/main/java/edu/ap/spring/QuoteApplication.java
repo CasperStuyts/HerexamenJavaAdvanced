@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,6 +22,14 @@ public class QuoteApplication {
 	String url = "jdbc:mysql://localhost:3306/quotes";
     String user = "root";
     String password = "root";
+    File directory = new File("oscar_wilde.txt");
+  //  Scanner s = new Scanner(directory);
+  //  ArrayList<String> list = new ArrayList<String>()
+  //  while (s.hasNextLine()){
+  //      list.add(s.nextLine());
+  //  }
+  //  s.close();};
+  //  Connection conn = DriverManager.getConnection(url, user, password);	
 	@Autowired
 	UI ui;
 
@@ -30,7 +39,7 @@ public class QuoteApplication {
 		};
     }
 	
-	public static void main(String[] args)  throws IOException {
+	public static void main(String[] args)  throws IOException, SQLException{
 		
 		new SpringApplicationBuilder(QuoteApplication.class).headless(false).run(args);}
 		@Bean
@@ -39,13 +48,8 @@ public class QuoteApplication {
 				ui.setupUI();
 			};
 			
-			File directory = new File("oscar_wilde.txt");
-		    Scanner s = new Scanner(directory);
-		    ArrayList<String> list = new ArrayList<String>();
-		    while (s.hasNextLine()){
-		        list.add(s.nextLine());
-		    }
-		    s.close();};
-		    Connection conn = DriverManager.getConnection(url, user, password);	
-	}
-}
+			
+		    
+		  
+	};}
+

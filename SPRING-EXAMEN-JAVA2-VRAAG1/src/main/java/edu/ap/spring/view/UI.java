@@ -26,7 +26,7 @@ public class UI implements InitializingBean {
 	private JTextField searchWord;
 	private JPasswordField userPass;
 	private JPanel controlPanel;
-    private JButton btnAddQuotes;
+    private JButton btnAddQuotes, btnZoekQuotes, btnGetAllQuotes;
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		System.setProperty("java.awt.headless", "false");
@@ -47,10 +47,18 @@ public class UI implements InitializingBean {
 		btnAddQuotes.setText("Add all quotes");
 		//btnAddQuotes.addActionListener(eventHandler::whenButtonClicked);
 		
+		btnZoekQuotes = new JButton();
+		btnZoekQuotes.setText("Search for quotes");
+		
+		btnGetAllQuotes = new JButton();
+		btnGetAllQuotes.setText("Get all quotes");
+		
 		jFrame.add(controlPanel);
 		controlPanel.add(label1);
 		controlPanel.add(searchWord);
 		controlPanel.add(btnAddQuotes);
+		controlPanel.add(btnZoekQuotes);
+		controlPanel.add(btnGetAllQuotes);
 		jFrame.setSize(400, 400);
 		jFrame.setLocationRelativeTo(null);
 		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

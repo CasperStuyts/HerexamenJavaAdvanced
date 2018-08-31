@@ -16,7 +16,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface QuoteRepository extends CrudRepository<Quote, Long>  {
+public interface QuoteRepository extends CrudRepository<Quote, Long>   {
 
     static final String insertSql ="Insert into quote (thequote) values (?)";
     
